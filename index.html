@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RomaLauncher</title>
+    
+    <link rel="icon" type="image/png" href="https://i.ibb.co/MD4pvg1C/Romaball.png">
+    
     <style>
         /* Limpa as bordas padrão e deixa o resto do site branco */
         body, html {
@@ -25,7 +28,7 @@
             position: relative;
         }
 
-        /* A SUA LOGO - Centralizada */
+        /* A SUA LOGO PRINCIPAL - Centralizada */
         .bloco-topo .logo-principal {
             height: 65px;
             width: auto;
@@ -60,7 +63,7 @@
         /* ÁREA DO JOGO (PARTE BRANCA) */
         .conteudo-principal {
             display: flex;
-            flex-direction: column; /* Organiza o iframe e o botão em coluna (um embaixo do outro) */
+            flex-direction: column;
             align-items: center;
             padding: 40px;
             background-color: #ffffff;
@@ -70,7 +73,7 @@
         .area-jogo {
             display: flex;
             flex-direction: column;
-            width: 800px; /* Mesma largura do jogo */
+            width: 800px;
         }
 
         /* ESTILO DO IFRAME DO SUBWAY SURFERS */
@@ -82,10 +85,10 @@
             height: 600px;
         }
 
-        /* BOTÃO DE TELA CHEIA (Abaixo, na direita) */
+        /* BOTÃO DE TELA CHEIA */
         .botao-fullscreen {
-            align-self: flex-end; /* Empurra o botão estritamente para a direita */
-            margin-top: 10px; /* Espaço logo abaixo do jogo */
+            align-self: flex-end;
+            margin-top: 10px;
             background: none;
             border: none;
             cursor: pointer;
@@ -95,9 +98,8 @@
             align-items: center;
         }
 
-        /* Tamanho do ícone de tela cheia */
         .botao-fullscreen img {
-            height: 25px; /* Tamanho discreto e proporcional */
+            height: 25px;
             width: auto;
         }
 
@@ -122,7 +124,6 @@
     </div>
 
     <div class="conteudo-principal">
-        
         <div class="area-jogo">
             <iframe 
                 id="jogo-subway"
@@ -134,19 +135,16 @@
                 <img src="https://static.thenounproject.com/png/66373-200.png" alt="Tela Cheia">
             </button>
         </div>
-
     </div>
 
     <script>
         function entrarTelaCheia() {
             var iframe = document.getElementById('jogo-subway');
-            
-            // Verifica qual comando o navegador suporta para ativar a tela cheia
             if (iframe.requestFullscreen) {
                 iframe.requestFullscreen();
-            } else if (iframe.webkitRequestFullscreen) { /* Safari / Chrome antigo */
+            } else if (iframe.webkitRequestFullscreen) {
                 iframe.webkitRequestFullscreen();
-            } else if (iframe.msRequestFullscreen) { /* Internet Explorer / Edge antigo */
+            } else if (iframe.msRequestFullscreen) {
                 iframe.msRequestFullscreen();
             }
         }
